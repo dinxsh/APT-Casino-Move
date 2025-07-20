@@ -1,15 +1,10 @@
 import { AptosWalletAdapterProvider, useWallet } from "@aptos-labs/wallet-adapter-react";
 import { WalletReadyState } from "@aptos-labs/wallet-adapter-base";
+import { DynamicContextProvider, DynamicWidget } from '@dynamic-labs/sdk-react-core';
+import { EthereumWalletConnectors } from '@dynamic-labs/ethereum';
 
 // Import Aptos network configuration
 import { APTOS_NETWORKS, DEFAULT_NETWORK } from './aptos';
-
-// Configure wallets - for now we'll use a simplified approach
-// In a real implementation, you would import and configure each wallet adapter
-const wallets = [
-  // These would be actual wallet adapters
-  // For now, we'll create a basic structure
-];
 
 // Network configuration
 const networks = [
@@ -21,18 +16,18 @@ const networks = [
 // Auto-connect configuration
 const autoConnect = true;
 
-// Export the wallet adapter provider configuration
-export const AptosWalletProvider = ({ children }) => {
+// Export Dynamic Labs Embedded Wallet provider for keyless login
+export const DynamicWalletProvider = ({ children }) => {
   return (
-    <AptosWalletAdapterProvider
-      plugins={wallets}
-      autoConnect={autoConnect}
-      onError={(error) => {
-        console.error("Aptos wallet error:", error);
+    <DynamicContextProvider
+      settings={{
+        environmentId: '6b4e2007-d1ac-4282-a75c-a386bb2beff3',
+        walletConnectors: [EthereumWalletConnectors],
       }}
     >
+      <DynamicWidget />
       {children}
-    </AptosWalletAdapterProvider>
+    </DynamicContextProvider>
   );
 };
 

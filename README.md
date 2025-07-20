@@ -284,3 +284,27 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ---
 
 **Built with ❤️ on Aptos Blockchain**
+
+## Keyless Wallet (Dynamic Labs Embedded Wallet) Integration for Aptos
+
+This project now supports keyless login via Dynamic Labs Embedded Wallet for Aptos.
+
+### Setup Steps
+
+1. **Install Dynamic Labs SDK**
+   ```bash
+   npm install @dynamic-labs/sdk-react-core
+   # or
+   yarn add @dynamic-labs/sdk-react-core
+   ```
+
+2. **Set Dynamic Labs Environment ID**
+   - Register your app at [Dynamic Labs Console](https://app.dynamic.xyz/dashboard/developer) to get an Environment ID.
+   - Add the following to your `.env.local` or Vercel environment variables:
+     ```
+     NEXT_PUBLIC_DYNAMIC_ENV_ID=your_dynamic_env_id
+     ```
+
+3. **Usage**
+   - Users will see Dynamic Labs Embedded Wallet as a wallet option in the wallet connect dropdown.
+   - Dynamic Labs supports keyless/social login for a seamless experience.
