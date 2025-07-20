@@ -1,5 +1,4 @@
-import { AptosWalletAdapterProvider, useWallet } from "@aptos-labs/wallet-adapter-react";
-import { WalletReadyState } from "@aptos-labs/wallet-adapter-base";
+import { AptosWalletAdapterProvider, useWallet, WalletReadyState } from "@aptos-labs/wallet-adapter-react";
 import { DynamicContextProvider, DynamicWidget } from '@dynamic-labs/sdk-react-core';
 import { EthereumWalletConnectors } from '@dynamic-labs/ethereum';
 
