@@ -1,4 +1,4 @@
-# Fully On-Chain Casino on Aptos Blockchain
+# On-Chain Casino on Aptos Blockchain
 
 A fully on-chain casino replica of stake.com built on the Aptos blockchain, featuring three popular casino games: Roulette, Mines, and Spin Wheel. All games use on-chain randomness and are played exclusively with APT tokens.
 
