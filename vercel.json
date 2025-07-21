@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next"
+  "functions": {
+    "src/app/**/*.js": {
+      "maxDuration": 30
     }
-  ],
+  },
   "routes": [
     {
       "src": "/(.*)",
@@ -15,11 +14,6 @@
   "env": {
     "NEXT_PUBLIC_APTOS_NETWORK": "testnet",
     "NEXT_PUBLIC_CASINO_MODULE_ADDRESS": "@casino-module-address"
-  },
-  "functions": {
-    "src/app/**/*.js": {
-      "maxDuration": 30
-    }
   },
   "headers": [
     {
